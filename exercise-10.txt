@@ -15,7 +15,7 @@ Query OK, 1 row affected (0.00 sec)
 
 mysql> use Hotel;
 Database changed
-mysql> create table Hotel_Information (`RoomID` INT auto_increment primary key, `Room Number` INT, `Floor Number` INT, `Max Occupancy` INT, `Date Available` DATETIME, `Private_Kitchen?` BOOLEAN, `Room Type` ENUM('Janitor Closet', 'Public Laundry Room', 'Gym', 'Rentable Room'), `Number of Windows` INT, `Carpet?` BOOLEAN);
+mysql> create table Hotel_Information (`RoomID` INT auto_increment primary key, `Room Number` INT, `Floor Number` INT, `Max Occupancy` INT, `Private_Kitchen?` BOOLEAN, `Room Type` ENUM('Janitor Closet', 'Public Laundry Room', 'Gym', 'Rentable Room'), `Number of Windows` INT, `Carpet?` BOOLEAN);
 Query OK, 0 rows affected (0.01 sec)
 
 mysql> describe Hotel_Information;
@@ -26,10 +26,21 @@ mysql> describe Hotel_Information;
 | Room Number       | int(11)                                                            | YES  |     | NULL    |                |
 | Floor Number      | int(11)                                                            | YES  |     | NULL    |                |
 | Max Occupancy     | int(11)                                                            | YES  |     | NULL    |                |
-| Date Available    | datetime                                                           | YES  |     | NULL    |                |
 | Private_Kitchen?  | tinyint(1)                                                         | YES  |     | NULL    |                |
 | Room Type         | enum('Janitor Closet','Public Laundry Room','Gym','Rentable Room') | YES  |     | NULL    |                |
 | Number of Windows | int(11)                                                            | YES  |     | NULL    |                |
 | Carpet?           | tinyint(1)                                                         | YES  |     | NULL    |                |
 +-------------------+--------------------------------------------------------------------+------+-----+---------+----------------+
-9 rows in set (0.00 sec)
+8 rows in set (0.00 sec)
+
+mysql> describe Availability;
++-------------+----------+------+-----+---------+-------+
+| Field       | Type     | Null | Key | Default | Extra |
++-------------+----------+------+-----+---------+-------+
+| Book_Date   | datetime | YES  |     | NULL    |       |
+| Days_Booked | int(11)  | YES  |     | NULL    |       |
+| RoomID      | int(11)  | YES  |     | NULL    |       |
++-------------+----------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+****RoomID will be foreign key in Availability table for RoomID primary key in Hotel_Information

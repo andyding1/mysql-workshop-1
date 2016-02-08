@@ -1,0 +1,14 @@
+mysql> use decodemtl_addressbook;
+Database changed
+
+mysql> create table Account (`ID` int auto_increment primary key);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create table AddressBook (`ID` int auto_increment primary key);                                                                          
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create table Entry (`ID` int auto_increment primary key);                                                                                
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create table Test (`ID` int auto_increment primary key);                                                                                 
+Query OK, 0 rows affected (0.00 sec)

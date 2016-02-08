@@ -2,6 +2,17 @@ mysql> use chicken_barn;
 Database changed
 mysql> create table hatching_chick (`Chicken_ID` int auto_increment primary key, `Birthday` DATETIME, `Date_Admitted` DATETIME, `Type` ENUM('Hen', 'Rooster'));
 Query OK, 0 rows affected (0.03 sec)
+mysql> describe hatching_chick;
++---------------+-----------------------+------+-----+---------+----------------+
+| Field         | Type                  | Null | Key | Default | Extra          |
++---------------+-----------------------+------+-----+---------+----------------+
+| Chicken_ID    | int(11)               | NO   | PRI | NULL    | auto_increment |
+| Birthday      | datetime              | YES  |     | NULL    |                |
+| Date_Admitted | datetime              | YES  |     | NULL    |                |
+| Type          | enum('Hen','Rooster') | YES  |     | NULL    |                |
++---------------+-----------------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
 //How many chicks will come to age on a specific date (in my example I used 5)
 mysql> select * from hatching_chick where Current_date-Birthday=5;
 

@@ -1,0 +1,35 @@
+Will need to create a file with the following:
+Unique IDentifier - INT auto_increment primary key
+Date Available - DATETIME
+Max Occupancy - INT
+Private Kitchen? - BOOLEAN
+Type of Room - ENUM('Janitor Closet', 'Public Laundry Room', 'Gym', 'Rentable Room')
+Number of Windows - INT
+Carpet? - BOOLEAN
+Room Number - INT
+Floor Number - INT
+
+/////////////////////////////////////
+mysql> create database Hotel;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use Hotel;
+Database changed
+mysql> create table Hotel_Information (`RoomID` INT auto_increment primary key, `Room Number` INT, `Floor Number` INT, `Max Occupancy` INT, `Date Available` DATETIME, `Private_Kitchen?` BOOLEAN, `Room Type` ENUM('Janitor Closet', 'Public Laundry Room', 'Gym', 'Rentable Room'), `Number of Windows` INT, `Carpet?` BOOLEAN);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> describe Hotel_Information;
++-------------------+--------------------------------------------------------------------+------+-----+---------+----------------+
+| Field             | Type                                                               | Null | Key | Default | Extra          |
++-------------------+--------------------------------------------------------------------+------+-----+---------+----------------+
+| RoomID            | int(11)                                                            | NO   | PRI | NULL    | auto_increment |
+| Room Number       | int(11)                                                            | YES  |     | NULL    |                |
+| Floor Number      | int(11)                                                            | YES  |     | NULL    |                |
+| Max Occupancy     | int(11)                                                            | YES  |     | NULL    |                |
+| Date Available    | datetime                                                           | YES  |     | NULL    |                |
+| Private_Kitchen?  | tinyint(1)                                                         | YES  |     | NULL    |                |
+| Room Type         | enum('Janitor Closet','Public Laundry Room','Gym','Rentable Room') | YES  |     | NULL    |                |
+| Number of Windows | int(11)                                                            | YES  |     | NULL    |                |
+| Carpet?           | tinyint(1)                                                         | YES  |     | NULL    |                |
++-------------------+--------------------------------------------------------------------+------+-----+---------+----------------+
+9 rows in set (0.00 sec)

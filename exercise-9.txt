@@ -1,0 +1,9 @@
+mysql> use chicken_barn;
+Database changed
+mysql> create table hatching_chick (`Chicken_ID` int auto_increment primary key, `Birthday` DATETIME, `Date_Admitted` DATETIME, `Type` ENUM('Hen', 'Rooster'));
+Query OK, 0 rows affected (0.03 sec)
+//How many chicks will come to age on a specific date (in my example I used 5)
+mysql> select * from hatching_chick where Current_date-Birthday=5;
+
+//How many rooster, hen, and chicks existed in the Barn on a specific date (used 1/5/2015 as an example)
+mysql> select * from hatching_chick where Date_Admitted < 1/5/2015;
